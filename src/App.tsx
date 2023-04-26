@@ -72,7 +72,6 @@ const App = () => {
 
     setFilms(films);
   };
-  console.log(homeworlds);
   return (
     <div className="App">
       <div className="inputContainer">
