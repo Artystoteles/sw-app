@@ -80,6 +80,7 @@ const App = () => {
           className="inputField"
           type="text"
           value={inputValue}
+          placeholder="Search you favourite star wars character"
           onChange={(e) => setinputValue(e.target.value)}
         />
         <button className="submitButton" onClick={handleSearch}>
@@ -101,7 +102,10 @@ const App = () => {
             </p>
             <p>
               <strong>Homeworld population:</strong>{" "}
-              {homeworlds[index]?.population}
+              {homeworlds[index]?.population.replace(
+                /\B(?=(\d{3})+(?!\d))/g,
+                "."
+              )}
             </p>
           </div>
         ))}
